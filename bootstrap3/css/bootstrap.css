@@ -1077,16 +1077,11 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
-
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   line-height: 1.42857143;
-  /*color: #333;*/
-  /*background-color: #fff;*/
 }
 input,
 button,
@@ -1262,42 +1257,41 @@ h6 .small,
 .h6 .small {
   font-size: 75%;
 }
-h1,
-.h1 {
-  font-size: 36px;
+h1, .h1 {
+  font-size: 2.5rem;
 }
-h2,
-.h2 {
-  font-size: 30px;
+
+h2, .h2 {
+  font-size: 2rem;
 }
-h3,
-.h3 {
-  font-size: 24px;
+
+h3, .h3 {
+  font-size: 1.75rem;
 }
-h4,
-.h4 {
-  font-size: 18px;
+
+h4, .h4 {
+  font-size: 1.5rem;
 }
-h5,
-.h5 {
-  font-size: 14px;
+
+h5, .h5 {
+  font-size: 1.25rem;
 }
-h6,
-.h6 {
-  font-size: 12px;
+
+h6, .h6 {
+  font-size: 1rem;
 }
 p {
   margin: 0 0 10px;
 }
 .lead {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 300;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 1.5em;
   }
 }
 small,
@@ -1477,7 +1471,7 @@ abbr[data-original-title] {
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
-  font-size: 17.5px;
+  font-size: 1.1em;
   border-left: 5px solid #eee;
 }
 blockquote p:last-child,
@@ -1560,7 +1554,7 @@ pre {
   display: block;
   padding: 9.5px;
   margin: 0 0 10px;
-  font-size: 13px;
+  font-size: 0.8em;;
   line-height: 1.42857143;
   color: #333;
   word-break: break-all;
@@ -1612,7 +1606,7 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
-.col-xs-1, .col-sm-1, .col-sm-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-sm-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-sm-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-sm-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-sm-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-sm-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-sm-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-sm-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-sm-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-sm-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-sm-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-sm-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -1933,160 +1927,160 @@ pre code {
   }
 }
 @media (min-width: 992px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
-  .col-sm-12 {
+  .col-md-12 {
     width: 100%;
   }
-  .col-sm-11 {
+  .col-md-11 {
     width: 91.66666667%;
   }
-  .col-sm-10 {
+  .col-md-10 {
     width: 83.33333333%;
   }
-  .col-sm-9 {
+  .col-md-9 {
     width: 75%;
   }
-  .col-sm-8 {
+  .col-md-8 {
     width: 66.66666667%;
   }
-  .col-sm-7 {
+  .col-md-7 {
     width: 58.33333333%;
   }
-  .col-sm-6 {
+  .col-md-6 {
     width: 50%;
   }
-  .col-sm-5 {
+  .col-md-5 {
     width: 41.66666667%;
   }
-  .col-sm-4 {
+  .col-md-4 {
     width: 33.33333333%;
   }
-  .col-sm-3 {
+  .col-md-3 {
     width: 25%;
   }
-  .col-sm-2 {
+  .col-md-2 {
     width: 16.66666667%;
   }
-  .col-sm-1 {
+  .col-md-1 {
     width: 8.33333333%;
   }
-  .col-sm-pull-12 {
+  .col-md-pull-12 {
     right: 100%;
   }
-  .col-sm-pull-11 {
+  .col-md-pull-11 {
     right: 91.66666667%;
   }
-  .col-sm-pull-10 {
+  .col-md-pull-10 {
     right: 83.33333333%;
   }
-  .col-sm-pull-9 {
+  .col-md-pull-9 {
     right: 75%;
   }
-  .col-sm-pull-8 {
+  .col-md-pull-8 {
     right: 66.66666667%;
   }
-  .col-sm-pull-7 {
+  .col-md-pull-7 {
     right: 58.33333333%;
   }
-  .col-sm-pull-6 {
+  .col-md-pull-6 {
     right: 50%;
   }
-  .col-sm-pull-5 {
+  .col-md-pull-5 {
     right: 41.66666667%;
   }
-  .col-sm-pull-4 {
+  .col-md-pull-4 {
     right: 33.33333333%;
   }
-  .col-sm-pull-3 {
+  .col-md-pull-3 {
     right: 25%;
   }
-  .col-sm-pull-2 {
+  .col-md-pull-2 {
     right: 16.66666667%;
   }
-  .col-sm-pull-1 {
+  .col-md-pull-1 {
     right: 8.33333333%;
   }
-  .col-sm-pull-0 {
+  .col-md-pull-0 {
     right: auto;
   }
-  .col-sm-push-12 {
+  .col-md-push-12 {
     left: 100%;
   }
-  .col-sm-push-11 {
+  .col-md-push-11 {
     left: 91.66666667%;
   }
-  .col-sm-push-10 {
+  .col-md-push-10 {
     left: 83.33333333%;
   }
-  .col-sm-push-9 {
+  .col-md-push-9 {
     left: 75%;
   }
-  .col-sm-push-8 {
+  .col-md-push-8 {
     left: 66.66666667%;
   }
-  .col-sm-push-7 {
+  .col-md-push-7 {
     left: 58.33333333%;
   }
-  .col-sm-push-6 {
+  .col-md-push-6 {
     left: 50%;
   }
-  .col-sm-push-5 {
+  .col-md-push-5 {
     left: 41.66666667%;
   }
-  .col-sm-push-4 {
+  .col-md-push-4 {
     left: 33.33333333%;
   }
-  .col-sm-push-3 {
+  .col-md-push-3 {
     left: 25%;
   }
-  .col-sm-push-2 {
+  .col-md-push-2 {
     left: 16.66666667%;
   }
-  .col-sm-push-1 {
+  .col-md-push-1 {
     left: 8.33333333%;
   }
-  .col-sm-push-0 {
+  .col-md-push-0 {
     left: auto;
   }
-  .col-sm-offset-12 {
+  .col-md-offset-12 {
     margin-left: 100%;
   }
-  .col-sm-offset-11 {
+  .col-md-offset-11 {
     margin-left: 91.66666667%;
   }
-  .col-sm-offset-10 {
+  .col-md-offset-10 {
     margin-left: 83.33333333%;
   }
-  .col-sm-offset-9 {
+  .col-md-offset-9 {
     margin-left: 75%;
   }
-  .col-sm-offset-8 {
+  .col-md-offset-8 {
     margin-left: 66.66666667%;
   }
-  .col-sm-offset-7 {
+  .col-md-offset-7 {
     margin-left: 58.33333333%;
   }
-  .col-sm-offset-6 {
+  .col-md-offset-6 {
     margin-left: 50%;
   }
-  .col-sm-offset-5 {
+  .col-md-offset-5 {
     margin-left: 41.66666667%;
   }
-  .col-sm-offset-4 {
+  .col-md-offset-4 {
     margin-left: 33.33333333%;
   }
-  .col-sm-offset-3 {
+  .col-md-offset-3 {
     margin-left: 25%;
   }
-  .col-sm-offset-2 {
+  .col-md-offset-2 {
     margin-left: 16.66666667%;
   }
-  .col-sm-offset-1 {
+  .col-md-offset-1 {
     margin-left: 8.33333333%;
   }
-  .col-sm-offset-0 {
+  .col-md-offset-0 {
     margin-left: 0;
   }
 }
@@ -2499,7 +2493,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 20px;
-  font-size: 21px;
+  font-size: 1.3em;
   line-height: inherit;
   color: #333;
   border: 0;
@@ -2542,7 +2536,7 @@ input[type="checkbox"]:focus {
 output {
   display: block;
   padding-top: 7px;
-  font-size: 14px;
+  font-size: 0.9em;
   line-height: 1.42857143;
   color: #555;
 }
@@ -2551,7 +2545,7 @@ output {
   width: 100%;
   height: 34px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 0.9em;
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
@@ -2707,7 +2701,7 @@ fieldset[disabled] .checkbox label {
 .input-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -2722,7 +2716,7 @@ select[multiple].input-sm {
 .form-group-sm .form-control {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -2738,13 +2732,13 @@ select[multiple].input-sm {
   height: 30px;
   min-height: 32px;
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
 }
 .input-lg {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -2759,7 +2753,7 @@ select[multiple].input-lg {
 .form-group-lg .form-control {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -2775,7 +2769,7 @@ select[multiple].input-lg {
   height: 46px;
   min-height: 38px;
   padding: 11px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
 }
 .has-feedback {
@@ -2991,20 +2985,20 @@ select[multiple].input-lg {
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
     padding-top: 11px;
-    font-size: 18px;
+    font-size: 1.1em;
   }
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px;
-    font-size: 12px;
+    font-size: 0.8em;
   }
 }
 .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -3440,21 +3434,21 @@ fieldset[disabled] .btn-link:focus {
 .btn-lg,
 .btn-group-lg > .btn {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
   border-radius: 3px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
   padding: 1px 5px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -3533,7 +3527,7 @@ tbody.collapse.in {
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
+  font-size: 0.9em;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -3608,7 +3602,7 @@ tbody.collapse.in {
 .dropdown-header {
   display: block;
   padding: 3px 20px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.42857143;
   color: #777;
   white-space: nowrap;
@@ -3844,7 +3838,7 @@ tbody.collapse.in {
 .input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -3867,7 +3861,7 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
 .input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -3903,7 +3897,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon {
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: normal;
   line-height: 1;
   color: #555;
@@ -3914,12 +3908,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon.input-sm {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   border-radius: 3px;
 }
 .input-group-addon.input-lg {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   border-radius: 6px;
 }
 .input-group-addon input[type="radio"],
@@ -3954,7 +3948,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-btn {
   position: relative;
-  font-size: 0;
+  font-size: 1em;
   white-space: nowrap;
 }
 .input-group-btn > .btn {
@@ -4281,7 +4275,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 20px;
 }
 .navbar-brand:hover,
@@ -4781,7 +4775,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-lg > li > a,
 .pagination-lg > li > span {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 1.1em;
   line-height: 1.3333333;
 }
 .pagination-lg > li:first-child > a,
@@ -4797,7 +4791,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-sm > li > a,
 .pagination-sm > li > span {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 1.5;
 }
 .pagination-sm > li:first-child > a,
@@ -4919,7 +4913,7 @@ a.label:focus {
   display: inline-block;
   min-width: 10px;
   padding: 3px 7px;
-  font-size: 12px;
+  font-size: 0.8em;
   font-weight: bold;
   line-height: 1;
   color: #fff;
@@ -4974,7 +4968,7 @@ a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 1.2em;
   font-weight: 200;
 }
 .jumbotron > hr {
@@ -5001,7 +4995,7 @@ a.badge:focus {
   }
   .jumbotron h1,
   .jumbotron .h1 {
-    font-size: 63px;
+    font-size: 3.9em;
   }
 }
 .thumbnail {
@@ -5142,7 +5136,7 @@ a.thumbnail.active {
   float: left;
   width: 0;
   height: 100%;
-  font-size: 12px;
+  font-size: 0.8em;
   line-height: 20px;
   color: #fff;
   text-align: center;
@@ -5476,7 +5470,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 1em;
   color: inherit;
 }
 .panel-title > a,
@@ -5846,7 +5840,7 @@ button.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -5997,7 +5991,7 @@ button.close {
   z-index: 1070;
   display: block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 0.92em;
   font-style: normal;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6116,7 +6110,7 @@ button.close {
   max-width: 276px;
   padding: 1px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 0.9em;
   font-style: normal;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6156,7 +6150,7 @@ button.close {
 .popover-title {
   padding: 8px 14px;
   margin: 0;
-  font-size: 14px;
+  font-size: 0.9em;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
@@ -6326,7 +6320,7 @@ button.close {
   bottom: 0;
   left: 0;
   width: 15%;
-  font-size: 20px;
+  font-size: 1.2em;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
@@ -6445,7 +6439,7 @@ button.close {
     width: 30px;
     height: 30px;
     margin-top: -10px;
-    font-size: 30px;
+    font-size: 1.88em;
   }
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .icon-prev {

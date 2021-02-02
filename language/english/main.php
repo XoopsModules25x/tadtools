@@ -15,6 +15,9 @@ define('_TAD_EXPAND_ALL', 'Expand all');
 define('_TAD_CONTACT_ALL', 'Contact all');
 
 define('_TAD_DEL_CONFIRM', 'Are you sure to delete it?');
+define('_TAD_DEL_CONFIRM_TITLE', 'Are you sure to delete this data');
+define('_TAD_DEL_CONFIRM_TEXT', 'Relevant information will be removed!');
+define('_TAD_DEL_CONFIRM_BTN', 'OK to delete!');
 define('_TAD_FUNCTION', 'Function');
 define('_TAD_EDIT', 'Edit');
 define('_TAD_DEL', 'Delete');
@@ -52,6 +55,7 @@ define('_TAD_ADMIN', '"%s" Admin');
 define('_TAD_CONFIG', '"%s" Preferences');
 define('_TAD_UPDATE', 'update "%s"');
 define('_TAD_BLOCKS', '"%s" Blocks');
+
 define('_TAD_TF_BLOCK_CONFIG', 'Block config');
 define('_TAD_TF_SYSTEM_CONFIG', 'System config');
 define('_TAD_TF_SYSTEM_MODADM', 'Online install/update');
@@ -59,6 +63,7 @@ define('_TAD_TF_SYSTEM_DBADM', 'Adminer');
 define('_TAD_TF_MODULE_CONFIG', 'Module config');
 define('_TAD_TF_USER_ADMIN', 'Admin');
 define('_TAD_TF_USER_BLOCK', 'Blocks');
+define('_TAD_TF_USER_TAD_BLOCK', 'Block Advanced');
 define('_TAD_TF_THEME_ADMIN', 'Theme');
 define('_TAD_TF_THEME_DEBUG', 'PHP debug');
 define('_TAD_TF_THEME_UNDEBUG', 'Disable PHP debug');
@@ -75,7 +80,7 @@ define('_TAD_CENTER_ZONE', 'Center Zone');
 define('_TAD_LEFT_ZONE', 'Left Zone');
 define('_TAD_RIGHT_ZONE', 'Right Zone');
 
-define("_TAD_SLIDE_DEFAULT_DESCRIPT", "You can upload slider images from tad_theme admin. You can edit descript for images with HTML tag.");
+define('_TAD_SLIDE_DEFAULT_DESCRIPT', 'You can upload slider images from tad_theme admin. You can edit descript for images with HTML tag.');
 
 define('TADTOOLS_CALENDAR_TODAY', 'Today');
 define('TADTOOLS_CALENDAR_PREV_MONTH', 'Prev Month');
@@ -84,7 +89,41 @@ define('TADTOOLS_CALENDAR_NEXT_MONTH', 'Next Month');
 define('TADTOOLS_ROTATE_LEFT', 'rotate 90 degrees left');
 define('TADTOOLS_ROTATE_RIGHT', 'rotate 90 degrees right');
 define('TADTOOLS_CHECKBOX_TO_DEL', 'To delete a file, please click on the check box.');
-
 define('_TAD_MENU_CONFIG', 'Dorpdown Setup');
+define('_TAD_OOPS_SOMETHING_WRONG', 'Ooops! Sorry, but something went wrong!');
 
 define('_TAD_EMPTY', 'No information available');
+
+//TadDataCenter.php
+define('_TDC_REQUIRE', 'Required');
+define('_TDC_INPUT', 'Textbox');
+define('_TDC_RADIO', 'Radio');
+define('_TDC_CHECKBOX', 'Checkbox');
+define('_TDC_SELECT', 'Select');
+define('_TDC_TEXTAREA', 'Textarea');
+define('_TDC_DATE', 'Date Picker');
+define('_TDC_NOTE', 'Description text');
+define('_TDC_TITLE', 'Title');
+define('_TDC_INPUT_TITLE', 'Please enter title');
+define('_TDC_DESCRIPTION', 'Description');
+define('_TDC_INPUT_DESCRIPTION', 'Enter the relevant description here');
+define('_TDC_TYPE', 'Type');
+define('_TDC_OPTIONS', 'Options');
+define('_TDC_OPTIONS_NOTE', 'Use the ; to separate options. eg, "male;female". If the option value and the option text are different, use = to set it, eg "1=male;0=female"');
+// define('_TDC_', 'Required');
+define('_TDC_FILL_PEOPLE', 'Name');
+define('_TDC_INPUT_COL_ID', 'Do not move, for program');
+define('_TDC_COL_ID', 'Identifier');
+//TadUpFiles.php
+define('_TUF_PERMISSION_NOTE', 'If not checked, all open downloads');
+
+//TadModData.php
+define('_TM_FILE_UPLOAD', 'File Upload');
+define('_TM_SAVE', 'Save updates');
+define('_TM_ADD', 'Send new');
+define('_TM_FILES', 'Related Files');
+
+//TadMod.php
+define('_TM_FILE_NOT_DIR', 'Catalog not available');
+
+define('_TM_FILE_DEL_BY', "Uploaded by '%s', must be deleted by '%s' or administrator");

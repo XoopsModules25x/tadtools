@@ -1,42 +1,13 @@
 <?php
-include_once "tadtools_header.php";
+use XoopsModules\Tadtools\Utility;
+// require_once __DIR__ . '/tadtools_header.php';
 
-//取得jquery路徑，$mode="google"、"none"、"local","link","none"
+//取得jquery路徑，$mode="return"
 //$theme=ui-lightness , base
 
 if (!function_exists('get_jquery')) {
-    function get_jquery($ui = false, $mode = "local", $theme = 'base')
+    function get_jquery($ui = false, $mode = '', $theme = 'base')
     {
-        global $xoTheme;
-        //$xoopsModuleConfig=TadToolsXoopsModuleConfig();
-        if (isset($xoTheme)) {
-            $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
-            $xoTheme->addScript('modules/tadtools/jquery/jquery-migrate.min.js');
-            if ($ui) {
-                $xoTheme->addStylesheet("modules/tadtools/jquery/themes/{$theme}/jquery.ui.all.css");
-                $xoTheme->addScript('modules/tadtools/jquery/ui/jquery-ui.js');
-            }
-        } else {
-
-            $jqueryui_path = "";
-            if ($ui) {
-
-                $jqueryui_path = "
-                <link href='" . TADTOOLS_URL . "/jquery/themes/{$theme}/jquery.ui.all.css' rel='stylesheet' type='text/css'>
-                <script src='" . TADTOOLS_URL . "/jquery/ui/jquery-ui.js'></script>";
-            }
-
-            $jquery_path = "
-              <script type='text/javascript'>
-                if(typeof jQuery == 'undefined') {
-                document.write(\"<script type='text/javascript' src='" . TADTOOLS_URL . "/jquery/jquery-1.11.1.min.js'><\/script>\");
-                document.write(\"<script type='text/javascript' src='" . TADTOOLS_URL . "/jquery/jquery-migrate.min.js'><\/script>\");
-                document.write(\"<script type='text/javascript' src='" . TADTOOLS_URL . "/jquery/jquery.jgrowl.js'><\/script>\");
-                }
-              </script>
-              $jqueryui_path
-              ";
-            return $jquery_path;
-        }
+        Utility::get_jquery($ui, $mode, $theme);
     }
 }

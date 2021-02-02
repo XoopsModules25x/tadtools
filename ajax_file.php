@@ -1,21 +1,44 @@
 <?php
-include_once "tadtools_header.php";
+use Xmf\Request;
+use XoopsModules\Tadtools\TadUpFiles;
 
-include_once $GLOBALS['xoops']->path('/modules/system/include/functions.php');
-$op       = system_CleanVars($_REQUEST, 'op', '', 'string');
-$mod_name = system_CleanVars($_REQUEST, 'mod_name', '', 'string');
-$files_sn = system_CleanVars($_REQUEST, 'files_sn', '', 'int');
+require_once __DIR__ . '/tadtools_header.php';
+
+$op = Request::getString('op');
+$mod_name = Request::getString('mod_name');
+$table = Request::getString('table');
+$sort_col = Request::getString('sort_col');
+$primary_key = Request::getString('primary_key');
+$files_sn = Request::getInt('files_sn');
+$sort_arr = Request::getArray('sort_arr');
+$db_prefix = Request::getString('db_prefix');
 
 switch ($op) {
     case 'remove_file':
-        include_once XOOPS_ROOT_PATH . "/modules/tadtools/TadUpFiles.php";
         $TadUpFiles = new TadUpFiles($mod_name);
+        $TadUpFiles->set_db_prefix($db_prefix);
         if ($TadUpFiles->del_files($files_sn)) {
             echo '1';
         }
-        break;
+        exit;
+
+    case 'save_sort':
+        save_sort($table, $sort_col, $primary_key, $sort_arr);
+        exit;
 
     default:
         # code...
         break;
+}
+
+function save_sort($table, $sort_col, $primary_key, $sort_arr = [])
+{
+    global $xoopsDB;
+    $sort = 1;
+    foreach ($sort_arr as $sn) {
+        $sql = "update `" . $xoopsDB->prefix($table) . "` set `{$sort_col}`='{$sort}' where `{$primary_key}`='{$sn}'";
+        $xoopsDB->queryF($sql) or die(_TAD_SORT_FAIL . " (" . date("Y-m-d H:i:s") . ")" . $sql);
+        $sort++;
+    }
+    echo _TAD_SORTED . "(" . date("Y-m-d H:i:s") . ")";
 }

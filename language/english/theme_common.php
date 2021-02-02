@@ -1,9 +1,9 @@
 <?php
 define('THEME_MODULE0', 'Main menu');
 define('THEME_MODULE1', 'Home');
-define("THEME_LOGIN", "Username");
-define("THEME_PASS", "Password");
-define("THEME_SEARCH_TEXT", "keyword");
+define('THEME_LOGIN', 'Username');
+define('THEME_PASS', 'Password');
+define('THEME_SEARCH_TEXT', 'keyword');
 define('TF_USER_ID', 'Username');
 define('TF_USER_PASS', 'Password');
 define('TF_USER_S_ID', 'Username:');
@@ -12,6 +12,7 @@ define('TF_USER_ENTER', 'Login');
 define('TF_USER_EXIT', 'Logout');
 define('TF_USER_ADMIN', 'Administration');
 define('TF_USER_BLOCK', 'Blocks setup');
+define('TF_USER_TAD_BLOCK', 'Block Advanced');
 define('TF_THEME_ADMIN', 'Theme setup');
 define('TF_THEME_DEBUG', 'Enable debug');
 define('TF_THEME_UNDEBUG', 'Unable debug');

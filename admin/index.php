@@ -1,6 +1,5 @@
 <?php
 /**
- * TadTools module
  *
  * You may not change or alter any portion of this comment or credits
  * of supporting developers from this source code or any supporting source code
@@ -9,20 +8,20 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       (c) 2000-2016 XOOPS Project (www.xoops.org)
- * @license             GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html/)
- * @package             TadTools
- * @since               2.5.0
- * @author              Tad
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      http://www.fsf.org/copyleft/gpl.html GNU public license
+ * @package
+ * @since        2.5.0
+ * @author
+ * @version      $Id $
  **/
 
-include_once __DIR__ . '/admin_header.php';
-xoops_cp_header();
+require __DIR__ . '/header.php';
 
-$indexAdmin = new ModuleAdmin();
+$adminObject = \Xmf\Module\Admin::getInstance();
 
-echo $indexAdmin->addNavigation(basename(__FILE__));
-echo $indexAdmin->renderIndex();
+$adminObject->displayNavigation(basename(__FILE__));
+$adminObject->displayIndex();
 
-include_once __DIR__ . '/admin_footer.php';
-//xoops_cp_footer();
+require __DIR__ . '/footer.php';
+xoops_cp_footer();

@@ -26,6 +26,7 @@
             //Events
             $(this).bind('tabactivate', function (e, currentTab) {
                 if (typeof options.activate === 'function') {
+                    // console.log(li.baseURI);
                     options.activate.call(currentTab, e)
                 }
             });
@@ -131,7 +132,10 @@
                         'background': 'none'
                     });
 
-                    $($respTabs.find('.resp-tab-content.' + options.tabidentify)[tabNum]).addClass('resp-tab-content-active').addClass(options.tabidentify).attr('style', 'display:block');
+                    $($respTabs.find('.resp-tab-content.' + options.tabidentify)[tabNum]).addClass('resp-tab-content-active').addClass(options.tabidentify).attr('style', 'display:block').css({
+                        'background-color': options.activetab_bg,
+                        'border-color': options.active_border_color
+                    });
                 }
                 //assign proper classes for when tabs mode is activated before making a selection in accordion mode
                 else {
@@ -170,7 +174,6 @@
 
                             $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + '].' + options.tabidentify).slideDown().addClass('resp-tab-content-active');
                         } else {
-                            console.log('here');
                             $respTabs.find('.resp-tab-active.' + options.tabidentify).removeClass('resp-tab-active').css({
                                 'background-color': options.inactive_bg,
                                 'border-color': 'none'
@@ -183,10 +186,11 @@
                                 'border-color': options.active_border_color
                             });
 
-                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + '].' + options.tabidentify).addClass('resp-tab-content-active').attr('style', 'display:block');
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + '].' + options.tabidentify).addClass('resp-tab-content-active').attr('style', 'display:block').css({
+                                'background-color': options.activetab_bg,
+                                'border-color': options.active_border_color
+                            });
                         }
-                        //Trigger tab activation event
-                        $currentTab.trigger('tabactivate', $currentTab);
 
                         //Update Browser History
                         if (historyApi) {
@@ -208,7 +212,12 @@
                             }
 
                             history.replaceState(null, null, newHash);
+                            console.log(newHash);
                         }
+
+
+                        //Trigger tab activation event
+                        $currentTab.trigger('tabactivate', $currentTab);
                     });
 
                 });

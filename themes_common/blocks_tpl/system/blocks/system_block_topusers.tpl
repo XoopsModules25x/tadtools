@@ -1,20 +1,6 @@
-<{foreach item=user from=$block.users}>
-    <ul class="userblock list-unstyled">
-
-        <{if $user.avatar != ""}>
-            <li class="avatar-image">
-                <img src="<{$user.avatar}>" alt="<{$user.name}>" class="img-circle">
-                <span class="badge pull-right"><{$user.rank}></span>
-            </li>
-        <{else}>
-            <li class="avatar-image">
-                <img src="<{$xoops_imageurl}>images/blank.gif" alt="<{$user.name}>" class="img-circle">
-                <span class="badge pull-right"><{$user.rank}></span>
-            </li>
-        <{/if}>
-
-        <li class="user-name"><a href="<{$xoops_url}>/userinfo.php?uid=<{$user.id}>" title="<{$user.name}>"><{$user.name}></a></li>
-
-        <li class="join-date text-right"><{$user.posts}></li>
-    </ul>
-<{/foreach}>
+<{assign var=this_file value=$smarty.template|basename|replace:'db:':''}>
+<{if $smarty.session.bootstrap==4}>
+    <{includeq file="$xoops_rootpath/modules/tadtools/themes4_tpl/blocks_tpl/system/blocks/`$this_file`"}>
+<{else}>
+    <{includeq file="$xoops_rootpath/modules/tadtools/themes3_tpl/blocks_tpl/system/blocks/`$this_file`"}>
+<{/if}>

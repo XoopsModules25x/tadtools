@@ -58,11 +58,12 @@ define('_TAD_BLOCKS', '「%s」區塊管理');
 
 define('_TAD_TF_BLOCK_CONFIG', '設定本區塊');
 define('_TAD_TF_SYSTEM_CONFIG', '系統偏好設定');
-define('_TAD_TF_SYSTEM_MODADM', '線上安裝更新');
+define('_TAD_TF_SYSTEM_MODADM', '線上安裝升級');
 define('_TAD_TF_SYSTEM_DBADM', '資料庫管理');
 define('_TAD_TF_MODULE_CONFIG', '模組管理區');
 define('_TAD_TF_USER_ADMIN', '管理');
 define('_TAD_TF_USER_BLOCK', '區塊');
+define('_TAD_TF_USER_TAD_BLOCK', '進階區塊');
 define('_TAD_TF_THEME_ADMIN', '佈景');
 define('_TAD_TF_THEME_DEBUG', '開除錯');
 define('_TAD_TF_THEME_UNDEBUG', '關除錯');
@@ -79,7 +80,7 @@ define('_TAD_CENTER_ZONE', '中間區域（包含中間區塊及主內容）');
 define('_TAD_LEFT_ZONE', '左邊區域（視佈景版型不同可能包含左右兩側之區塊）');
 define('_TAD_RIGHT_ZONE', '右邊區域（視佈景版型不同可能包含左右兩側之區塊）');
 
-define("_TAD_SLIDE_DEFAULT_DESCRIPT", "您可以從<b>佈景管理的後台設定畫面</b>修改這部份內容，除了可以上傳滑動圖片外，也可以自己輸入圖片說明內容。部份佈景都支援HTML語法。");
+define('_TAD_SLIDE_DEFAULT_DESCRIPT', '您可以從<b>佈景管理的後台設定畫面</b>修改這部份內容，除了可以上傳滑動圖片外，也可以自己輸入圖片說明內容。部份佈景都支援HTML語法。');
 
 define('TADTOOLS_CALENDAR_TODAY', '今天');
 define('TADTOOLS_CALENDAR_PREV_MONTH', '上個月');
@@ -92,3 +93,38 @@ define('_TAD_MENU_CONFIG', '選單設定');
 define('_TAD_OOPS_SOMETHING_WRONG', '哎呀！資料庫有點問題呢！');
 
 define('_TAD_EMPTY', '尚無資料');
+
+//TadDataCenter.php
+define('_TDC_REQUIRE', '必填');
+define('_TDC_INPUT', '文字框');
+define('_TDC_RADIO', '單選圓框');
+define('_TDC_CHECKBOX', '複選方框');
+define('_TDC_SELECT', '下拉選單');
+define('_TDC_TEXTAREA', '大量文字框');
+define('_TDC_DATE', '日期選單');
+define('_TDC_NOTE', '說明文字');
+define('_TDC_TITLE', '題目');
+define('_TDC_INPUT_TITLE', '請輸入題目');
+define('_TDC_DESCRIPTION', '說明');
+define('_TDC_INPUT_DESCRIPTION', '此處輸入相關說明');
+define('_TDC_TYPE', '類型');
+define('_TDC_OPTIONS', '選項');
+define('_TDC_OPTIONS_NOTE', '選項請用;隔開，如：「男;女」，若選項值和選項文字不同，請用=設定，如「1=男;0=女」');
+// define('_TDC_', '必填');
+define('_TDC_FILL_PEOPLE', '填寫人');
+define('_TDC_INPUT_COL_ID', '沒事勿動，給程式用的');
+define('_TDC_COL_ID', '程式辨識碼');
+
+//TadUpFiles.php
+define('_TUF_PERMISSION_NOTE', '不選即全部開放下載：');
+
+//TadModData.php
+define('_TM_FILE_UPLOAD', '檔案上傳');
+define('_TM_SAVE', '儲存更新');
+define('_TM_ADD', '送出新增');
+define('_TM_FILES', '相關檔案');
+
+//TadMod.php
+define('_TM_FILE_NOT_DIR', '無法取得目錄');
+
+define('_TM_FILE_DEL_BY', '由「%s」上傳，需由「%s」或管理員刪除');

@@ -1,5 +1,5 @@
 <?php
-include_once 'admin_common.php';
+require_once __DIR__ . '/admin_common.php';
 
 define('_MA_TT_SAVE', ' Save');
 define('_MA_TT_EMPTY_CONFIG', ' Config has not been set.');
@@ -12,3 +12,4 @@ define('_TT_COLOR_DARK', 'Dark');
 define('_TT_COLOR_DEFAULT', 'Default');
 define('_MA_TT_THEMES_KIND', 'Theme kind');
 define('_MA_TT_TAD_THEMES', 'Bootstrap inside');
+define('_MA_TT_THEMES_NOTE', 'If you find duplicate themes, go to <a href="' . XOOPS_URL . '/modules/system/admin.php?fct=preferences&op=show&confcat_id=1">System Preferences</a>, click again to save.');

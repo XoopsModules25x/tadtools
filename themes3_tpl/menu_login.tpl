@@ -9,20 +9,20 @@
               <{$smarty.const.TF_USER_ENTER}>
             </legend>
             <div class="form-group">
-              <label class="col-sm-4 control-label">
+              <label class="col-sm-4 control-label" for="uname">
                 <{$smarty.const.TF_USER_S_ID}>
               </label>
               <div class="col-sm-8">
-                <input type="text" name="uname"  id="uname" placeholder="<{$smarty.const.TF_USER_ID}>"  class="form-control" />
+                <input type="text" name="uname"  id="uname" placeholder="<{$smarty.const.TF_USER_ID}>"  class="form-control">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-sm-4 control-label">
+              <label class="col-sm-4 control-label" for="pass">
                 <{$smarty.const.TF_USER_S_PASS}>
               </label>
               <div class="col-sm-8">
-              <input type="password" name="pass" id="pass" placeholder="<{$smarty.const.TF_USER_PASS}>" class="form-control" />
+              <input type="password" name="pass" id="pass" placeholder="<{$smarty.const.TF_USER_PASS}>" class="form-control">
               </div>
             </div>
 
@@ -30,28 +30,30 @@
               <label class="col-sm-4 control-label">
               </label>
               <div class="col-sm-8">
-                <input type="hidden" name="xoops_redirect" value="<{$xoops_requesturi}>" />
-                <input type="hidden" name="rememberme" value="On" />
-                <input type="hidden" name="op" value="login" />
-                <input type="hidden" name="xoops_login" value="1"/>
+                <input type="hidden" name="xoops_redirect" value="<{$xoops_requesturi}>">
+                <input type="hidden" name="rememberme" value="On">
+                <input type="hidden" name="op" value="login">
+                <input type="hidden" name="xoops_login" value="1">
                 <button type="submit" class="btn btn-primary btn-block"><{$smarty.const.TF_USER_ENTER}></button>
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-sm-5">
-                <a href="<{$xoops_url}>/register.php" class="btn btn-xs btn-link" style="background: transparent; width: auto; color: #303030; font-size: 12px;">
-                  <span class="fa fa-pencil"></span>
-                  <{$smarty.const.TF_USER_REGIST}>
-                </a>
+            <{if $allow_register=='1'}>
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <a href="<{$xoops_url}>/register.php" class="btn btn-xs btn-link" style="background: transparent; width: auto; color: #303030; font-size: 0.75em;">
+                    <span class="fa fa-pencil"></span>
+                    <{$smarty.const.TF_USER_REGIST}>
+                  </a>
+                </div>
+                <div class="col-sm-7">
+                  <a href="<{$xoops_url}>/user.php#lost" class="btn btn-xs btn-link" style="background: transparent; width: auto; color: #303030; font-size: 0.75em;">
+                    <span class="fa fa-search"></span>
+                    <{$smarty.const.TF_USER_FORGET_PASS}>
+                  </a>
+                </div>
               </div>
-              <div class="col-sm-7">
-                <a href="<{$xoops_url}>/user.php#lost" class="btn btn-xs btn-link" style="background: transparent; width: auto; color: #303030; font-size: 12px;">
-                  <span class="fa fa-search"></span>
-                  <{$smarty.const.TF_USER_FORGET_PASS}>
-                </a>
-              </div>
-            </div>
+            <{/if}>
           </fieldset>
         </form>
 
@@ -62,20 +64,21 @@
     <{if $openid_login=="1" or $openid_login=="2"}>
       <{php}>
 
-      global $xoopsConfig,$xoopsTpl;
+        global $xoopsConfig,$xoopsTpl,$oidc_array,$oidc_array2,$all_oidc,$all_oidc2;
 
 
-      $modhandler = xoops_gethandler('module');
-      $config_handler =xoops_gethandler('config');
+      $moduleHandler = xoops_getHandler('module');
+      $configHandler =xoops_gethandler('config');
 
-      $TadLoginXoopsModule = &$modhandler->getByDirname("tad_login");
+      $TadLoginXoopsModule = $moduleHandler->getByDirname("tad_login");
 
       if($TadLoginXoopsModule){
-        include_once XOOPS_ROOT_PATH."/modules/tad_login/function.php";
-        include_once XOOPS_ROOT_PATH."/modules/tad_login/language/{$xoopsConfig['language']}/county.php";
+        require_once XOOPS_ROOT_PATH."/modules/tad_login/function.php";
+        require_once XOOPS_ROOT_PATH."/modules/tad_login/oidc.php";
+        require_once XOOPS_ROOT_PATH."/modules/tad_login/language/{$xoopsConfig['language']}/county.php";
 
-        $config_handler =xoops_gethandler('config');
-        $modConfig= &$config_handler->getConfigsByCat(0, $TadLoginXoopsModule->getVar('mid'));
+        $configHandler =xoops_gethandler('config');
+        $modConfig= &$configHandler->getConfigsByCat(0, $TadLoginXoopsModule->getVar('mid'));
 
         if (in_array('facebook', $modConfig['auth_method'])) {
             $tad_login['facebook'] = facebook_login('return');
@@ -89,29 +92,42 @@
             $tad_login['google'] = '';
         }
 
-
         $auth_method=$modConfig['auth_method'];
         $i=0;
 
         foreach($auth_method as $method){
           $method_const="_".strtoupper($method);
-          $loginTitle=sprintf(_TAD_LOGIN_BY,constant($method_const));
 
           if($method=="facebook"){
             $tlogin[$i]['link']=$tad_login['facebook'];
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY,constant($method_const));
           }elseif($method=="google"){
             $tlogin[$i]['link']=$tad_login['google'];
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY,constant($method_const));
           }else{
             $tlogin[$i]['link']=XOOPS_URL."/modules/tad_login/index.php?login&op={$method}";
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY,constant($method_const));
           }
+
+                if(in_array($method, $oidc_array)){
+                    $tlogin[$i]['img']=XOOPS_URL."/modules/tad_login/images/oidc/{$all_oidc[$method]['tail']}.png";
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY, constant('_'.strtoupper($all_oidc[$method]['tail']))._TADLOGIN_OIDC);
+
+                }elseif(in_array($method, $oidc_array2)){
+                    $tlogin[$i]['img']=XOOPS_URL."/modules/tad_login/images/{$method}.png";
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY, constant('_'.strtoupper($all_oidc2[$method]['tail']))._TADLOGIN_LDAP);
+
+                }else{
           $tlogin[$i]['img']=XOOPS_URL."/modules/tad_login/images/{$method}.png";
-          $tlogin[$i]['text']=$loginTitle;
+                    $tlogin[$i]['text']=sprintf(_TAD_LOGIN_BY,constant($method_const).' OpenID ');
+                }
 
           $i++;
         }
         $xoopsTpl->assign('tlogin',$tlogin);
       }
       <{/php}>
+
 
       <{assign var="i" value=0}>
       <{assign var="total" value=1}>
